@@ -1,5 +1,8 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Restaurant {
     String id;
     String name;
@@ -7,12 +10,23 @@ public class Restaurant {
     String email;
     String phoneNumber;
 
+    public String getId() {
+        return id;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    List<Order> orderList;
+
     public Restaurant(String name, String gstNumber, String email, String phoneNumber, Catalog catalog) {
         this.name = name;
         this.gstNumber = gstNumber;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.catalog = catalog;
+        this.orderList=new ArrayList<>();
     }
 
     public String getName() {

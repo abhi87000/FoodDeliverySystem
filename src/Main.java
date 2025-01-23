@@ -22,8 +22,6 @@ public class Main {
         while(true)
         {
             try {
-
-
                 String input = scanner.nextLine();
                 input = input.trim();
                 String[] inp = input.split(" ");
@@ -32,7 +30,7 @@ public class Main {
                         restaurantService.registerRestaurant(inp[1], inp[2],inp[3],inp[4]);
                         break;
                     case "USER_REGISTRATION":
-                        userService.registerUser(inp[1], inp[2],inp[3]);
+                        userService.registerUser(inp[1], inp[2],inp[3],inp[4]);
                         break;
                     case "ADD_ITEM_IN_CATALOG":
                         restaurantService.addItem(inp[1], inp[2],inp[3],inp[4]);
@@ -43,6 +41,10 @@ public class Main {
                     case "GET_ORDERS":
                         userService.getOrders(inp[1]);
                         break;
+                    case "PLACE_ORDER":
+                        orderService.placeOrder(inp[1], inp[2],inp[3],inp[4]);
+                        break;
+
                     case "CLOSE":
                         break;
                     default:
